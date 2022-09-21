@@ -79,6 +79,32 @@
         <path>/demo</path>
     </configuration>
          </plugin>
+                 <plugin>
+            <groupId>org.codehaus.cargo</groupId>
+            <artifactId>cargo-maven2-plugin</artifactId>
+            <version>1.1.1</version>
+            <configuration>
+                <container>
+                    <containerId>tomcat9x</containerId>
+                    <type>remote</type>
+                </container>
+                <configuration>
+                    <type>runtime</type>
+                    <properties>
+                        <cargo.remote.username>tomcat</cargo.remote.username>
+                        <cargo.remote.password>Amane@1996</cargo.remote.password>
+                        <cargo.remote.uri>http://13.115.217.189:9090/manager/text</cargo.remote.uri>
+                    </properties>
+                    <deployables>
+                        <deployable>
+                            <groupId>com.fiobox</groupId>
+                            <artifactId>fiobox</artifactId>
+                            <type>war</type>
+                        </deployable>
+                    </deployables>
+                </configuration>
+            </configuration>
+        </plugin>
         </plugins>
     </build>
 
